@@ -32,4 +32,11 @@ copy or move dags in source_dags folder to ./dags
 
     docker-compose down && docker-compose up
 
+# 2 Custom Dags
+    my_dag.py
+        model accuracy pipeline
+    dags/data_ingestion_dag
+        etl pipeline
+
+
 ![Alt text](images/screenshot.png?raw=true "Airflow UI DAG")
