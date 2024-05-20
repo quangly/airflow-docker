@@ -1,8 +1,11 @@
 # How to setup Airflow with Docker in 5 minutes
+ if folders are not created
 
     mkdir ./dags ./plugins ./logs
 
-    dags stored in local dags will automatically sync to container dag folder
+dags stored in local dags will automatically sync to container dag folder
+
+copy or move dags in source_dags folder to ./dags
 
 # On Macos or Linux
 ### make sure user and group permissions are same between host and container
