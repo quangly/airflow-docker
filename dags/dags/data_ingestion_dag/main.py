@@ -65,7 +65,13 @@ def transform_data(exec_date):
         output_dir = Path(f'{dag_path}/processed_data/{file_date_path}')
         output_dir.mkdir(parents=True, exist_ok=True)
         # processed_data/2021-08-15/12/2021-08-15_12.csv
-        data.to_csv(output_dir / f"{file_date_path}.csv".replace("/", "_"), index=False, mode='a')
+        
+        overwrite = True
+        mode = 'w' # default to overwrite
+        if overwrite == False:
+            mode = 'a'
+        data.to_csv(output_dir / f"{file_date_path}.csv".replace("/", "_"), index=False, mode=mode)
+        print("csv write mode: " + mode)
 
     except ValueError as e:
         print("datetime format should match %Y-%m-%d %H", e)
@@ -96,7 +102,7 @@ def load_data(exec_date):
              ''')
     processed_file = f"{dag_path}/processed_data/{file_date_path}/{file_date_path.replace('/', '_')}.csv"
     records = pd.read_csv(processed_file)
-    records.to_sql('booking_record', conn, index=False, if_exists='append')
+    records.to_sql('booking_record', conn, index=False, if_exists='replace') #[append, replace]
 
 
 # initializing the default arguments that we'll pass to our DAG

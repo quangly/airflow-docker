@@ -41,3 +41,4 @@ copy or move dags in source_dags folder to ./dags
 
 ![Alt text](images/screenshot.png?raw=true "Airflow UI DAG")
 ![Alt text](images/booking.png?raw=true "ETL Client Hotel Booking")
+![Alt text](images/dbeaver.png?raw=true "DBEaver")
