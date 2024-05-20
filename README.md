@@ -31,3 +31,5 @@ copy or move dags in source_dags folder to ./dags
 #Docker commands
 
     docker-compose down && docker-compose up
+
+![Alt text](images/screenshot.png?raw=true "Airflow UI DAG")
