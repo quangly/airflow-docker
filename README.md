@@ -1,7 +1,7 @@
 # How to setup Airflow with Docker in 5 minutes
  if folders are not created
 
-    mkdir ./dags ./plugins ./logs
+    mkdir ./dags ./plugins ./logs ./db ./processed_data
 
 dags stored in local dags will automatically sync to container dag folder
 
