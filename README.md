@@ -21,14 +21,16 @@ copy or move dags in source_dags folder to ./dags
     password: airflow
 
 #Interact Airflow command line interface example
-
+    
+    docker ps | grep web
+    docker exec -it [CONTAINER_ID] bash #start bash session inside container
     docker exec [CONTAINER_ID] airflow version
 
 #API
 
     curl -X GET --user "airflow:airflow" "http://localhost:8080/api/v1/dags"
 
-#Docker commands
+#Docker commands to stop and start
 
     docker-compose down && docker-compose up
 
