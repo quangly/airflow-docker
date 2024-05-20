@@ -40,6 +40,13 @@ copy or move dags in source_dags folder to ./dags
     dags/data_ingestion_dag
         etl pipeline
 
+# Install DBEaver Community Edition Command Line
+
+    brew install --cask dbeaver-community
+
+# Install from Web
+    
+    https://dbeaver.io/download/
 
 ![Alt text](images/screenshot.png?raw=true "Airflow UI DAG")
 ![Alt text](images/booking.png?raw=true "ETL Client Hotel Booking")
