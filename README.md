@@ -2,6 +2,8 @@
 
     mkdir ./dags ./plugins ./logs
 
+    dags stored in local dags will automatically sync to container dag folder
+
 # On Macos or Linux
 ### make sure user and group permissions are same between host and container
  
