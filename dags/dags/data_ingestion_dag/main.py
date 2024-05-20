@@ -34,7 +34,9 @@ def transform_data(exec_date):
     try:
         print(f"Ingesting data for date: {exec_date}")
         date = datetime.strptime(exec_date, '%Y-%m-%d %H')
-        file_date_path = f"{date.strftime('%Y-%m-%d')}/{date.hour}"
+        # file_date_path = f"{date.strftime('%Y-%m-%d')}/{date.hour}"
+        # file_date_path = f"{date.strftime('%Y-%m-%d')}"
+        file_date_path = "db_dump" #do not use yyyy-mm-dd/hour path
 
         # booking = pd.read_csv(f"{dag_path}/raw_data/{file_date_path}/booking.csv", low_memory=False)
         booking = pd.read_csv(f"{dag_path}/raw_data/booking.csv", low_memory=False)
@@ -73,7 +75,8 @@ def transform_data(exec_date):
 def load_data(exec_date):
     print(f"Loading data for date: {exec_date}")
     date = datetime.strptime(exec_date, '%Y-%m-%d %H')
-    file_date_path = f"{date.strftime('%Y-%m-%d')}/{date.hour}"
+    # file_date_path = f"{date.strftime('%Y-%m-%d')}/{date.hour}"
+    file_date_path = "db_dump"
 
     conn = sqlite3.connect("/usr/local/airflow/db/datascience.db")
     c = conn.cursor()
