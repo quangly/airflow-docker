@@ -34,7 +34,7 @@ copy or move dags in source_dags folder to ./dags
 
     docker-compose down && docker-compose up
 
-# 2 Custom Dags
+# Two Custom Dags
     my_dag.py
         model accuracy pipeline
     dags/data_ingestion_dag
@@ -51,3 +51,21 @@ copy or move dags in source_dags folder to ./dags
 ![Alt text](images/screenshot.png?raw=true "Airflow UI DAG")
 ![Alt text](images/booking.png?raw=true "ETL Client Hotel Booking")
 ![Alt text](images/dbeaver.png?raw=true "DBEaver")
+
+# Clean up and Prune
+
+    docker container prune
+
+or
+
+which will clean up all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes, in one command.
+
+    docker system prune
+
+Remove unused local volumes
+
+    docker volume prune
+
+Remove all images
+
+    docker image prune -a
